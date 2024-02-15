@@ -1,0 +1,117 @@
+(base) time python3 -m train_noise_model --logdir our_model --arch "CL2|CAC|CAC|CL2|CAC|CAC|CL2|CAC|CAC|CL2|CAC|CAC"      --basler_path '~/datasets/CableTAMP/noise_basler' --width 4 --epochs 2000 --lr 1e-4 --n_batch_train 138 --n_batch_test 138      --n_patches_per_image 80 --patch_height 32 --patch_sampling uniform --n_channels 3 --lu_decomp      --epochs_full_valid 10 --do_sample
+TRACE:root:Basler path = /home/holesond/datasets/CableTAMP/noise_basler
+TRACE:root:Num GPUs Available: 1
+TRACE:root:# training scene instances (cam = None, iso = None) = 12
+TRACE:root:# testing scene instances (cam = None, iso = None) = 3
+TRACE:root:Building Noise Model...
+|-UniformDequantization
+|-NoiseExtraction
+|-ConditionalLinearExp2
+|-Conv2d1x1
+|-ConditionalAffineCoupling
+|-Conv2d1x1
+|-ConditionalAffineCoupling
+|-ConditionalLinearExp2
+|-Conv2d1x1
+|-ConditionalAffineCoupling
+|-Conv2d1x1
+|-ConditionalAffineCoupling
+|-ConditionalLinearExp2
+|-Conv2d1x1
+|-ConditionalAffineCoupling
+|-Conv2d1x1
+|-ConditionalAffineCoupling
+|-ConditionalLinearExp2
+|-Conv2d1x1
+|-ConditionalAffineCoupling
+|-Conv2d1x1
+|-ConditionalAffineCoupling
+TRACE:root:number of parameters = 6160
+TRACE:root:found an existing previous checkpoint, resuming from epoch 61
+TRACE:root:Logging to /home/holesond/CableTAMP/dataset_generation/noise/Noise2NoiseFlow-main/sRGB_noise_modeling/experiments/basler/our_model/
+../model/flow_layers/linear_transformation.py:85: UserWarning: This overload of nonzero is deprecated:
+	nonzero()
+Consider using one of the following signatures instead:
+	nonzero(*, bool as_tuple) (Triggered internally at  /opt/conda/conda-bld/pytorch_1603729006826/work/torch/csrc/utils/python_arg_parser.cpp:882.)
+  iso = gain_one_hot.nonzero()[:, 1]
+our_model, epoch: 70, tr_loss: 6758.9, ts_loss: 6572.6, sm_loss: 7988.7, tr_time: 109.81, ts_time: 6.34, sm_time: 13.80, T_time: 129.95, best:1, kld:0.078
+our_model, epoch: 80, tr_loss: 6690.5, ts_loss: 6590.3, sm_loss: 7922.2, tr_time: 106.45, ts_time: 6.60, sm_time: 12.68, T_time: 125.73, best:0, kld:0.070
+our_model, epoch: 90, tr_loss: 6653.5, ts_loss: 6535.6, sm_loss: 7810.7, tr_time: 108.35, ts_time: 6.33, sm_time: 12.66, T_time: 127.34, best:1, kld:0.052
+our_model, epoch: 100, tr_loss: 6613.0, ts_loss: 6528.9, sm_loss: 7794.2, tr_time: 107.64, ts_time: 6.31, sm_time: 12.68, T_time: 126.63, best:1, kld:0.044
+our_model, epoch: 110, tr_loss: 6566.3, ts_loss: 6589.2, sm_loss: 7804.3, tr_time: 106.38, ts_time: 6.37, sm_time: 12.63, T_time: 125.39, best:0, kld:0.045
+our_model, epoch: 120, tr_loss: 6521.3, ts_loss: 6397.9, sm_loss: 7766.0, tr_time: 106.39, ts_time: 6.53, sm_time: 12.89, T_time: 125.81, best:1, kld:0.038
+our_model, epoch: 130, tr_loss: 6480.2, ts_loss: 6345.9, sm_loss: 7812.6, tr_time: 106.55, ts_time: 6.34, sm_time: 12.76, T_time: 125.65, best:1, kld:0.038
+our_model, epoch: 140, tr_loss: 6446.3, ts_loss: 6311.2, sm_loss: 7916.1, tr_time: 106.20, ts_time: 6.54, sm_time: 12.64, T_time: 125.38, best:1, kld:0.044
+our_model, epoch: 150, tr_loss: 6420.4, ts_loss: 6306.1, sm_loss: 7944.3, tr_time: 107.62, ts_time: 6.43, sm_time: 12.62, T_time: 126.67, best:1, kld:0.040
+our_model, epoch: 160, tr_loss: 6401.1, ts_loss: 6248.3, sm_loss: 7870.9, tr_time: 107.82, ts_time: 6.53, sm_time: 12.63, T_time: 126.98, best:1, kld:0.041
+our_model, epoch: 170, tr_loss: 6386.7, ts_loss: 6254.6, sm_loss: 7948.5, tr_time: 106.59, ts_time: 6.41, sm_time: 12.94, T_time: 125.94, best:0, kld:0.047
+our_model, epoch: 180, tr_loss: 6369.9, ts_loss: 6248.5, sm_loss: 7948.9, tr_time: 106.29, ts_time: 6.40, sm_time: 12.80, T_time: 125.49, best:0, kld:0.037
+our_model, epoch: 190, tr_loss: 6333.0, ts_loss: 6153.7, sm_loss: 8027.5, tr_time: 108.80, ts_time: 6.36, sm_time: 13.61, T_time: 128.77, best:1, kld:0.046
+our_model, epoch: 200, tr_loss: 6296.9, ts_loss: 6130.9, sm_loss: 8175.9, tr_time: 107.71, ts_time: 6.39, sm_time: 12.69, T_time: 126.79, best:1, kld:0.043
+our_model, epoch: 210, tr_loss: 6271.4, ts_loss: 6154.8, sm_loss: 8261.0, tr_time: 106.70, ts_time: 6.47, sm_time: 12.67, T_time: 125.84, best:0, kld:0.050
+our_model, epoch: 220, tr_loss: 6253.6, ts_loss: 6132.0, sm_loss: 8297.2, tr_time: 106.74, ts_time: 6.36, sm_time: 12.65, T_time: 125.76, best:0, kld:0.058
+our_model, epoch: 230, tr_loss: 6238.4, ts_loss: 6100.7, sm_loss: 8348.0, tr_time: 108.90, ts_time: 6.48, sm_time: 13.18, T_time: 128.56, best:1, kld:0.050
+our_model, epoch: 240, tr_loss: 6226.0, ts_loss: 6151.1, sm_loss: 8345.8, tr_time: 109.23, ts_time: 6.50, sm_time: 13.09, T_time: 128.82, best:0, kld:0.040
+our_model, epoch: 250, tr_loss: 6216.5, ts_loss: 6095.0, sm_loss: 8218.3, tr_time: 106.81, ts_time: 6.56, sm_time: 13.03, T_time: 126.41, best:1, kld:0.062
+our_model, epoch: 260, tr_loss: 6207.6, ts_loss: 6029.2, sm_loss: 8248.0, tr_time: 107.74, ts_time: 6.32, sm_time: 12.63, T_time: 126.69, best:1, kld:0.059
+our_model, epoch: 270, tr_loss: 6198.9, ts_loss: 6014.3, sm_loss: 8299.1, tr_time: 106.87, ts_time: 6.34, sm_time: 12.73, T_time: 125.93, best:1, kld:0.058
+our_model, epoch: 280, tr_loss: 6191.8, ts_loss: 6046.1, sm_loss: 8370.2, tr_time: 106.44, ts_time: 6.29, sm_time: 12.67, T_time: 125.40, best:0, kld:0.065
+our_model, epoch: 290, tr_loss: 6185.8, ts_loss: 5992.6, sm_loss: 8289.5, tr_time: 108.62, ts_time: 6.33, sm_time: 12.63, T_time: 127.58, best:1, kld:0.055
+our_model, epoch: 300, tr_loss: 6179.1, ts_loss: 6016.8, sm_loss: 8299.6, tr_time: 107.70, ts_time: 6.39, sm_time: 12.67, T_time: 126.77, best:0, kld:0.060
+our_model, epoch: 310, tr_loss: 6171.0, ts_loss: 6019.7, sm_loss: 8341.0, tr_time: 109.23, ts_time: 6.42, sm_time: 12.79, T_time: 128.45, best:0, kld:0.057
+our_model, epoch: 320, tr_loss: 6162.8, ts_loss: 6004.5, sm_loss: 8320.0, tr_time: 107.72, ts_time: 6.36, sm_time: 12.67, T_time: 126.75, best:0, kld:0.069
+our_model, epoch: 330, tr_loss: 6155.0, ts_loss: 5975.3, sm_loss: 8184.3, tr_time: 106.67, ts_time: 6.59, sm_time: 12.68, T_time: 125.94, best:1, kld:0.069
+our_model, epoch: 340, tr_loss: 6148.2, ts_loss: 5945.3, sm_loss: 8145.7, tr_time: 106.37, ts_time: 6.34, sm_time: 13.36, T_time: 126.08, best:1, kld:0.054
+our_model, epoch: 350, tr_loss: 6142.1, ts_loss: 5984.4, sm_loss: 8390.7, tr_time: 108.07, ts_time: 6.38, sm_time: 12.65, T_time: 127.10, best:0, kld:0.070
+our_model, epoch: 360, tr_loss: 6134.9, ts_loss: 5969.6, sm_loss: 8530.4, tr_time: 106.51, ts_time: 6.36, sm_time: 12.63, T_time: 125.51, best:0, kld:0.082
+our_model, epoch: 370, tr_loss: 6130.1, ts_loss: 5988.2, sm_loss: 8467.8, tr_time: 108.02, ts_time: 6.53, sm_time: 12.66, T_time: 127.21, best:0, kld:0.074
+our_model, epoch: 380, tr_loss: 6128.8, ts_loss: 5972.3, sm_loss: 8468.0, tr_time: 106.82, ts_time: 6.53, sm_time: 12.78, T_time: 126.12, best:0, kld:0.079
+our_model, epoch: 390, tr_loss: 6124.3, ts_loss: 5988.2, sm_loss: 8568.8, tr_time: 106.23, ts_time: 6.36, sm_time: 12.92, T_time: 125.50, best:0, kld:0.076
+our_model, epoch: 400, tr_loss: 6119.1, ts_loss: 5970.4, sm_loss: 8649.5, tr_time: 106.88, ts_time: 6.31, sm_time: 12.92, T_time: 126.12, best:0, kld:0.071
+our_model, epoch: 410, tr_loss: 6113.4, ts_loss: 6006.7, sm_loss: 8501.1, tr_time: 106.44, ts_time: 6.33, sm_time: 12.68, T_time: 125.44, best:0, kld:0.079
+our_model, epoch: 420, tr_loss: 6106.4, ts_loss: 6022.6, sm_loss: 8618.4, tr_time: 108.58, ts_time: 6.29, sm_time: 12.76, T_time: 127.63, best:0, kld:0.083
+our_model, epoch: 430, tr_loss: 6101.1, ts_loss: 5962.6, sm_loss: 8643.3, tr_time: 107.88, ts_time: 6.51, sm_time: 13.40, T_time: 127.80, best:0, kld:0.067
+our_model, epoch: 440, tr_loss: 6099.0, ts_loss: 5998.7, sm_loss: 8553.5, tr_time: 106.88, ts_time: 6.35, sm_time: 12.66, T_time: 125.89, best:0, kld:0.067
+our_model, epoch: 450, tr_loss: 6096.7, ts_loss: 5969.9, sm_loss: 8686.2, tr_time: 106.29, ts_time: 6.46, sm_time: 12.96, T_time: 125.71, best:0, kld:0.069
+our_model, epoch: 460, tr_loss: 6092.8, ts_loss: 5972.3, sm_loss: 8696.6, tr_time: 106.76, ts_time: 6.48, sm_time: 12.65, T_time: 125.90, best:0, kld:0.074
+our_model, epoch: 470, tr_loss: 6088.9, ts_loss: 6028.0, sm_loss: 8727.8, tr_time: 106.52, ts_time: 6.29, sm_time: 13.10, T_time: 125.91, best:0, kld:0.081
+our_model, epoch: 480, tr_loss: 6087.3, ts_loss: 6002.2, sm_loss: 8706.6, tr_time: 106.60, ts_time: 7.13, sm_time: 13.06, T_time: 126.80, best:0, kld:0.081
+our_model, epoch: 490, tr_loss: 6085.6, ts_loss: 5996.9, sm_loss: 8729.4, tr_time: 108.22, ts_time: 6.38, sm_time: 12.68, T_time: 127.27, best:0, kld:0.070
+our_model, epoch: 500, tr_loss: 6084.4, ts_loss: 6036.7, sm_loss: 8704.8, tr_time: 111.09, ts_time: 6.44, sm_time: 13.11, T_time: 130.64, best:0, kld:0.082
+our_model, epoch: 510, tr_loss: 6080.7, ts_loss: 6012.6, sm_loss: 8729.0, tr_time: 106.60, ts_time: 6.32, sm_time: 13.18, T_time: 126.10, best:0, kld:0.073
+our_model, epoch: 520, tr_loss: 6079.9, ts_loss: 6010.0, sm_loss: 8636.7, tr_time: 106.45, ts_time: 6.43, sm_time: 13.03, T_time: 125.91, best:0, kld:0.077
+our_model, epoch: 530, tr_loss: 6077.7, ts_loss: 5967.0, sm_loss: 8771.5, tr_time: 108.74, ts_time: 6.37, sm_time: 13.12, T_time: 128.23, best:0, kld:0.059
+our_model, epoch: 540, tr_loss: 6076.9, ts_loss: 6007.3, sm_loss: 8757.0, tr_time: 106.69, ts_time: 6.47, sm_time: 13.13, T_time: 126.29, best:0, kld:0.074
+our_model, epoch: 550, tr_loss: 6074.3, ts_loss: 5975.1, sm_loss: 8877.5, tr_time: 106.74, ts_time: 6.47, sm_time: 12.90, T_time: 126.11, best:0, kld:0.071
+our_model, epoch: 560, tr_loss: 6073.1, ts_loss: 5995.2, sm_loss: 8836.9, tr_time: 108.05, ts_time: 6.26, sm_time: 12.65, T_time: 126.97, best:0, kld:0.060
+our_model, epoch: 570, tr_loss: 6071.9, ts_loss: 5987.9, sm_loss: 8790.6, tr_time: 107.67, ts_time: 6.37, sm_time: 13.12, T_time: 127.17, best:0, kld:0.071
+our_model, epoch: 580, tr_loss: 6069.8, ts_loss: 6009.7, sm_loss: 8828.2, tr_time: 107.87, ts_time: 6.34, sm_time: 12.93, T_time: 127.14, best:0, kld:0.077
+our_model, epoch: 590, tr_loss: 6069.4, ts_loss: 6012.7, sm_loss: 8702.8, tr_time: 106.32, ts_time: 6.28, sm_time: 12.65, T_time: 125.24, best:0, kld:0.064
+our_model, epoch: 600, tr_loss: 6068.8, ts_loss: 5999.3, sm_loss: 8796.4, tr_time: 106.93, ts_time: 6.58, sm_time: 12.65, T_time: 126.16, best:0, kld:0.076
+our_model, epoch: 610, tr_loss: 6066.1, ts_loss: 5969.9, sm_loss: 8738.0, tr_time: 106.81, ts_time: 6.53, sm_time: 12.64, T_time: 125.99, best:0, kld:0.062
+our_model, epoch: 620, tr_loss: 6066.0, ts_loss: 5973.2, sm_loss: 8627.6, tr_time: 107.79, ts_time: 6.39, sm_time: 13.11, T_time: 127.28, best:0, kld:0.057
+our_model, epoch: 630, tr_loss: 6063.0, ts_loss: 5985.2, sm_loss: 8645.8, tr_time: 107.43, ts_time: 6.27, sm_time: 12.62, T_time: 126.32, best:0, kld:0.067
+our_model, epoch: 640, tr_loss: 6063.8, ts_loss: 5998.0, sm_loss: 8707.1, tr_time: 108.87, ts_time: 6.48, sm_time: 13.10, T_time: 128.45, best:0, kld:0.073
+our_model, epoch: 650, tr_loss: 6061.4, ts_loss: 5993.9, sm_loss: 8697.4, tr_time: 107.25, ts_time: 6.37, sm_time: 13.01, T_time: 126.63, best:0, kld:0.066
+^CTraceback (most recent call last):
+  File "/home/holesond/apps/miniconda3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/holesond/apps/miniconda3/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/holesond/CableTAMP/dataset_generation/noise/Noise2NoiseFlow-main/sRGB_noise_modeling/train_noise_model.py", line 469, in <module>
+    main(hps)
+  File "/home/holesond/CableTAMP/dataset_generation/noise/Noise2NoiseFlow-main/sRGB_noise_modeling/train_noise_model.py", line 277, in main
+    grad_scaler.step(optimizer)
+  File "/home/holesond/apps/miniconda3/lib/python3.7/site-packages/torch/cuda/amp/grad_scaler.py", line 321, in step
+    retval = optimizer.step(*args, **kwargs)
+  File "/home/holesond/apps/miniconda3/lib/python3.7/site-packages/torch/autograd/grad_mode.py", line 26, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/holesond/apps/miniconda3/lib/python3.7/site-packages/torch/optim/adam.py", line 119, in step
+    group['eps']
+  File "/home/holesond/apps/miniconda3/lib/python3.7/site-packages/torch/optim/functional.py", line 94, in adam
+    denom = (exp_avg_sq.sqrt() / math.sqrt(bias_correction2)).add_(eps)
+KeyboardInterrupt
+
+real	1091m47.274s
+user	1509m58.959s
+sys	50m42.146s 

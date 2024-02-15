@@ -25,6 +25,7 @@ sys.path.append('../')
 from utils.arg_parser import arg_parser
 from data_loader.loader import (check_download_sidd, SIDDMediumDataset)
 from data_loader.iterable_loader import IterableSIDDMediumDataset
+from data_loader.iterable_loader_basler import IterableBaslerDataset
 from data_loader.utils import calc_train_test_stats, get_its, ResultLogger, hps_logger
 from utils.mylogger import add_logging_level
 from utils.patch_stats_calculator import PatchStatsCalculator
@@ -66,7 +67,13 @@ def init_params():
     }
 
 def main(hps):
-    check_download_sidd(hps.sidd_path)
+    if hps.basler_path:
+        use_basler_dataset = True
+        hps.basler_path = os.path.expanduser(hps.basler_path)
+    else:
+        use_basler_dataset = False
+    if not use_basler_dataset:
+        check_download_sidd(hps.sidd_path)
 
     total_time = time.time()
     host = socket.gethostname()
@@ -79,13 +86,19 @@ def main(hps):
     logging.basicConfig(level=logging.TRACE)
 
     hps.n_bins = 2. ** hps.n_bits_x
-
-    logging.trace('SIDD path = %s' % hps.sidd_path)
+    
+    if not use_basler_dataset:
+        logging.trace('SIDD path = %s' % hps.sidd_path)
+    else:
+        logging.trace('Basler path = %s' % hps.basler_path)
     logging.trace('Num GPUs Available: %s' % torch.cuda.device_count())
     hps.device = 'cuda' if torch.cuda.device_count() else 'cpu'
 
     # output log dir
-    logdir = os.path.abspath(os.path.join('experiments', 'sidd', hps.logdir)) + '/'
+    if not use_basler_dataset:
+        logdir = os.path.abspath(os.path.join('experiments', 'sidd', hps.logdir)) + '/'
+    else:
+        logdir = os.path.abspath(os.path.join('experiments', 'basler', hps.logdir)) + '/'
     
     if hps.no_resume:
         if os.path.exists(logdir):
@@ -95,38 +108,65 @@ def main(hps):
         os.makedirs(logdir, exist_ok=True)
     hps.logdirname = hps.logdir
     hps.logdir = logdir
-
-    medium_sidd_path = hps.sidd_path
-    if hps.dataset_type == 'full':
-        path = hps.sidd_path.split("/")
-        path[-2] = "SIDD_Medium_Raw"
-        medium_sidd_path = "/".join(path)
-
+    
     hps.num_workers = 5
-    hps.raw = 'raw' in hps.sidd_path.lower() and hps.n_channels == 4
-    train_dataset = IterableSIDDMediumDataset(
-        sidd_medium_path=hps.sidd_path,
-        train_or_test='train',
-        cam=hps.camera,
-        iso=hps.iso,
-        patch_size=(hps.patch_height, hps.patch_height),
-        is_raw=hps.raw,
-        num_patches_per_image=hps.n_patches_per_image
-    )
-    train_dataloader = DataLoader(train_dataset, batch_size=hps.n_batch_train, shuffle=False, num_workers=hps.num_workers, pin_memory=True)
+    if not use_basler_dataset:
+        medium_sidd_path = hps.sidd_path
+        if hps.dataset_type == 'full':
+            path = hps.sidd_path.split("/")
+            path[-2] = "SIDD_Medium_Raw"
+            medium_sidd_path = "/".join(path)
+        hps.raw = 'raw' in hps.sidd_path.lower() and hps.n_channels == 4
+        train_dataset = IterableSIDDMediumDataset(
+            sidd_medium_path=hps.sidd_path,
+            train_or_test='train',
+            cam=hps.camera,
+            iso=hps.iso,
+            patch_size=(hps.patch_height, hps.patch_height),
+            is_raw=hps.raw,
+            num_patches_per_image=hps.n_patches_per_image
+        )
+    else:
+        basler_path = hps.basler_path
+        hps.raw = False
+        train_dataset = IterableBaslerDataset(
+            dataset_path=basler_path,
+            train_or_test='train',
+            cam=hps.camera,
+            iso=hps.iso,
+            patch_size=(hps.patch_height, hps.patch_height),
+            is_raw=hps.raw,
+            num_patches_per_image=hps.n_patches_per_image
+        )
+    train_dataloader = DataLoader(
+        train_dataset, batch_size=hps.n_batch_train, shuffle=False,
+        num_workers=hps.num_workers, pin_memory=True)
     hps.n_tr_inst = train_dataset.cnt_inst
     logging.trace('# training scene instances (cam = {}, iso = {}) = {}'.format(
         str(hps.camera), str(hps.iso), hps.n_tr_inst))
-    test_dataset = IterableSIDDMediumDataset(
-        sidd_medium_path=hps.sidd_path,
-        train_or_test='test',
-        cam=hps.camera,
-        iso=hps.iso,
-        patch_size=(hps.patch_height, hps.patch_height),
-        is_raw=hps.raw,
-        num_patches_per_image=hps.n_patches_per_image
-    )
-    test_dataloader = DataLoader(test_dataset, batch_size=hps.n_batch_test, shuffle=False, num_workers=hps.num_workers, pin_memory=True)
+    if not use_basler_dataset:
+        test_dataset = IterableSIDDMediumDataset(
+            sidd_medium_path=hps.sidd_path,
+            train_or_test='test',
+            cam=hps.camera,
+            iso=hps.iso,
+            patch_size=(hps.patch_height, hps.patch_height),
+            is_raw=hps.raw,
+            num_patches_per_image=hps.n_patches_per_image
+        )
+    else:
+        test_dataset = IterableBaslerDataset(
+            dataset_path=hps.basler_path,
+            train_or_test='test',
+            cam=hps.camera,
+            iso=hps.iso,
+            patch_size=(hps.patch_height, hps.patch_height),
+            is_raw=hps.raw,
+            num_patches_per_image=hps.n_patches_per_image
+        )
+    test_dataloader = DataLoader(
+        test_dataset, batch_size=hps.n_batch_test, shuffle=False,
+        num_workers=hps.num_workers, pin_memory=True)
     hps.n_ts_inst = test_dataset.cnt_inst
     logging.trace('# testing scene instances (cam = {}, iso = {}) = {}'.format(
         str(hps.camera), str(hps.iso), hps.n_ts_inst))
@@ -153,7 +193,9 @@ def main(hps):
     hps.model_save_dir = os.path.join(hps.logdir, 'saved_models')
     
     hps.param_inits = init_params()
-    nm = NoiseModel(x_shape[1:], hps.arch, hps.flow_permutation, hps.param_inits, hps.lu_decomp, hps.device, hps.raw)
+    nm = NoiseModel(
+        x_shape[1:], hps.arch, hps.flow_permutation, hps.param_inits,
+        hps.lu_decomp, hps.device, hps.raw)
     nm.to(hps.device)
 
     autocast_enable = True

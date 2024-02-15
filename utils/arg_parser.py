@@ -19,6 +19,8 @@ def arg_parser():
                         default='./logdir/', help="Location to save logs")
     parser.add_argument("--sidd_path", type=str,
                         default='./data/SIDD_Medium_Raw/Data', help="Location of the SIDD dataset")
+    parser.add_argument("--basler_path", type=str,
+                        default="", help="Location of the Basler dataset")
     parser.add_argument("--n_train", type=int,
                         default=50000, help="Train epoch size")
     parser.add_argument("--n_test", type=int,

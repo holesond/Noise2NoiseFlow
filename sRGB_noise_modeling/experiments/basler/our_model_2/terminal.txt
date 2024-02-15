@@ -1,0 +1,66 @@
+(...)
+TRACE:root:Logging to /home/holesond/CableTAMP/dataset_generation/noise/Noise2NoiseFlow-main/sRGB_noise_modeling/experiments/basler/our_model_2/
+../model/flow_layers/linear_transformation.py:85: UserWarning: This overload of nonzero is deprecated:
+        nonzero()
+Consider using one of the following signatures instead:
+        nonzero(*, bool as_tuple) (Triggered internally at  /opt/conda/conda-bld/pytorch_1603729006826/work/torch/csrc/utils/python_arg_parser.cpp:882.)
+  iso = gain_one_hot.nonzero()[:, 1]
+our_model_2, epoch: 1, tr_loss: 15181.5, ts_loss: 8404.1, sm_loss: 9318.8, tr_time: 305.13, ts_time: 19.43, sm_time: 39.15, T_time: 363.71, best:1, kld:0.165
+our_model_2, epoch: 2, tr_loss: 8061.0, ts_loss: 7793.9, sm_loss: 8099.9, tr_time: 302.93, ts_time: 19.92, sm_time: 39.88, T_time: 362.73, best:1, kld:0.034
+our_model_2, epoch: 3, tr_loss: 7895.7, ts_loss: 7674.4, sm_loss: 7959.3, tr_time: 304.96, ts_time: 19.72, sm_time: 14.55, T_time: 339.24, best:1, kld:0.028
+our_model_2, epoch: 4, tr_loss: 7758.3, ts_loss: 7481.6, sm_loss: 7845.7, tr_time: 106.64, ts_time: 6.61, sm_time: 13.30, T_time: 126.55, best:1, kld:0.024
+our_model_2, epoch: 5, tr_loss: 7640.7, ts_loss: 7431.8, sm_loss: 7768.8, tr_time: 106.26, ts_time: 6.52, sm_time: 12.75, T_time: 125.52, best:1, kld:0.027
+our_model_2, epoch: 6, tr_loss: 7570.6, ts_loss: 7387.3, sm_loss: 7736.3, tr_time: 108.36, ts_time: 6.59, sm_time: 13.24, T_time: 128.19, best:1, kld:0.032
+our_model_2, epoch: 7, tr_loss: 7527.7, ts_loss: 7331.7, sm_loss: 7677.6, tr_time: 106.10, ts_time: 6.46, sm_time: 13.00, T_time: 125.56, best:1, kld:0.039
+our_model_2, epoch: 8, tr_loss: 7493.5, ts_loss: 7317.6, sm_loss: 7707.1, tr_time: 107.94, ts_time: 6.70, sm_time: 12.76, T_time: 127.40, best:1, kld:0.037
+our_model_2, epoch: 9, tr_loss: 7462.3, ts_loss: 7315.9, sm_loss: 7672.0, tr_time: 106.18, ts_time: 6.60, sm_time: 13.24, T_time: 126.02, best:1, kld:0.035
+our_model_2, epoch: 10, tr_loss: 7437.0, ts_loss: 7283.9, sm_loss: 7639.8, tr_time: 108.28, ts_time: 6.54, sm_time: 13.03, T_time: 127.85, best:1, kld:0.040
+our_model_2, epoch: 20, tr_loss: 6740.0, ts_loss: 6595.7, sm_loss: 7566.6, tr_time: 106.20, ts_time: 6.47, sm_time: 12.91, T_time: 125.59, best:1, kld:0.065
+our_model_2, epoch: 30, tr_loss: 6512.9, ts_loss: 6401.1, sm_loss: 7626.7, tr_time: 107.37, ts_time: 6.39, sm_time: 13.03, T_time: 126.79, best:1, kld:0.076
+our_model_2, epoch: 40, tr_loss: 6401.9, ts_loss: 6219.6, sm_loss: 7568.6, tr_time: 106.39, ts_time: 6.44, sm_time: 12.71, T_time: 125.55, best:1, kld:0.059
+our_model_2, epoch: 50, tr_loss: 6342.0, ts_loss: 6205.0, sm_loss: 7700.0, tr_time: 107.56, ts_time: 6.40, sm_time: 13.45, T_time: 127.42, best:1, kld:0.071
+our_model_2, epoch: 60, tr_loss: 6304.0, ts_loss: 6202.9, sm_loss: 7804.0, tr_time: 106.26, ts_time: 6.57, sm_time: 12.78, T_time: 125.61, best:1, kld:0.079
+our_model_2, epoch: 70, tr_loss: 6278.3, ts_loss: 6186.6, sm_loss: 7883.0, tr_time: 106.80, ts_time: 6.39, sm_time: 12.96, T_time: 126.16, best:1, kld:0.103
+our_model_2, epoch: 80, tr_loss: 6263.0, ts_loss: 6125.0, sm_loss: 7676.5, tr_time: 109.81, ts_time: 6.45, sm_time: 12.89, T_time: 129.15, best:1, kld:0.062
+our_model_2, epoch: 90, tr_loss: 6248.3, ts_loss: 6223.3, sm_loss: 7786.7, tr_time: 106.33, ts_time: 6.38, sm_time: 12.77, T_time: 125.49, best:0, kld:0.073
+our_model_2, epoch: 100, tr_loss: 6238.3, ts_loss: 6233.5, sm_loss: 7829.5, tr_time: 108.23, ts_time: 6.55, sm_time: 12.76, T_time: 127.54, best:0, kld:0.080 
+our_model_2, epoch: 110, tr_loss: 6228.4, ts_loss: 6102.0, sm_loss: 7740.6, tr_time: 106.29, ts_time: 6.42, sm_time: 13.14, T_time: 125.86, best:1, kld:0.067
+our_model_2, epoch: 120, tr_loss: 6218.9, ts_loss: 6147.2, sm_loss: 7828.9, tr_time: 109.08, ts_time: 6.53, sm_time: 13.42, T_time: 129.03, best:0, kld:0.066
+our_model_2, epoch: 130, tr_loss: 6214.8, ts_loss: 6136.6, sm_loss: 7774.0, tr_time: 106.13, ts_time: 6.38, sm_time: 13.36, T_time: 125.87, best:0, kld:0.074
+our_model_2, epoch: 140, tr_loss: 6205.3, ts_loss: 6080.7, sm_loss: 7904.2, tr_time: 106.15, ts_time: 6.43, sm_time: 12.76, T_time: 125.33, best:1, kld:0.087
+our_model_2, epoch: 150, tr_loss: 6200.6, ts_loss: 6128.6, sm_loss: 7854.8, tr_time: 107.72, ts_time: 6.72, sm_time: 12.81, T_time: 127.24, best:0, kld:0.082
+our_model_2, epoch: 160, tr_loss: 6192.8, ts_loss: 6335.5, sm_loss: 8033.0, tr_time: 107.57, ts_time: 6.65, sm_time: 12.83, T_time: 127.06, best:0, kld:0.126
+our_model_2, epoch: 170, tr_loss: 6190.2, ts_loss: 6309.7, sm_loss: 7973.2, tr_time: 106.18, ts_time: 6.60, sm_time: 13.10, T_time: 125.88, best:0, kld:0.102
+our_model_2, epoch: 180, tr_loss: 6185.5, ts_loss: 6147.8, sm_loss: 7734.4, tr_time: 106.05, ts_time: 6.58, sm_time: 13.10, T_time: 125.74, best:0, kld:0.062
+our_model_2, epoch: 190, tr_loss: 6182.3, ts_loss: 6532.2, sm_loss: 8025.0, tr_time: 108.55, ts_time: 6.70, sm_time: 13.29, T_time: 128.54, best:0, kld:0.125
+our_model_2, epoch: 200, tr_loss: 6179.7, ts_loss: 6147.0, sm_loss: 7928.4, tr_time: 106.21, ts_time: 6.40, sm_time: 12.75, T_time: 125.36, best:0, kld:0.103
+our_model_2, epoch: 210, tr_loss: 6175.4, ts_loss: 6061.5, sm_loss: 7798.0, tr_time: 108.35, ts_time: 6.48, sm_time: 12.79, T_time: 127.62, best:1, kld:0.065
+our_model_2, epoch: 220, tr_loss: 6172.7, ts_loss: 6081.7, sm_loss: 7862.3, tr_time: 107.51, ts_time: 6.39, sm_time: 13.34, T_time: 127.24, best:0, kld:0.077
+our_model_2, epoch: 230, tr_loss: 6170.7, ts_loss: 6387.2, sm_loss: 7842.9, tr_time: 106.95, ts_time: 7.08, sm_time: 13.78, T_time: 127.81, best:0, kld:0.081
+(...)
+our_model_2, epoch: 510, tr_loss: 6122.9, ts_loss: 5998.4, sm_loss: 7852.5, tr_time: 106.41, ts_time: 6.54, sm_time: 12.75, T_time: 125.69, best:0, kld:0.069
+our_model_2, epoch: 520, tr_loss: 6124.1, ts_loss: 6074.8, sm_loss: 7807.5, tr_time: 107.65, ts_time: 6.46, sm_time: 13.01, T_time: 127.13, best:0, kld:0.060
+our_model_2, epoch: 530, tr_loss: 6121.9, ts_loss: 6081.4, sm_loss: 8007.5, tr_time: 108.46, ts_time: 6.52, sm_time: 12.75, T_time: 127.73, best:0, kld:0.084
+our_model_2, epoch: 540, tr_loss: 6120.8, ts_loss: 6097.0, sm_loss: 7701.4, tr_time: 106.13, ts_time: 6.45, sm_time: 13.22, T_time: 125.80, best:0, kld:0.044
+our_model_2, epoch: 550, tr_loss: 6120.5, ts_loss: 6103.3, sm_loss: 7804.3, tr_time: 108.70, ts_time: 6.46, sm_time: 13.13, T_time: 128.29, best:0, kld:0.055
+our_model_2, epoch: 560, tr_loss: 6119.5, ts_loss: 6052.6, sm_loss: 7781.6, tr_time: 107.56, ts_time: 6.37, sm_time: 13.01, T_time: 126.94, best:0, kld:0.053
+our_model_2, epoch: 570, tr_loss: 6118.4, ts_loss: 6242.5, sm_loss: 7798.3, tr_time: 106.30, ts_time: 6.54, sm_time: 12.71, T_time: 125.56, best:0, kld:0.065
+our_model_2, epoch: 580, tr_loss: 6117.8, ts_loss: 6082.1, sm_loss: 7897.6, tr_time: 107.58, ts_time: 6.48, sm_time: 12.79, T_time: 126.85, best:0, kld:0.073
+our_model_2, epoch: 590, tr_loss: 6116.9, ts_loss: 6048.3, sm_loss: 7814.3, tr_time: 106.71, ts_time: 6.56, sm_time: 13.27, T_time: 126.54, best:0, kld:0.054
+our_model_2, epoch: 600, tr_loss: 6116.9, ts_loss: 6075.7, sm_loss: 7950.8, tr_time: 106.66, ts_time: 6.46, sm_time: 12.81, T_time: 125.93, best:0, kld:0.082
+our_model_2, epoch: 610, tr_loss: 6114.3, ts_loss: 6175.4, sm_loss: 7778.2, tr_time: 107.51, ts_time: 6.38, sm_time: 13.06, T_time: 126.95, best:0, kld:0.063
+our_model_2, epoch: 620, tr_loss: 6114.0, ts_loss: 6113.8, sm_loss: 8200.2, tr_time: 106.40, ts_time: 6.87, sm_time: 14.02, T_time: 127.28, best:0, kld:0.141
+our_model_2, epoch: 630, tr_loss: 6112.0, ts_loss: 6049.3, sm_loss: 7986.7, tr_time: 106.15, ts_time: 6.74, sm_time: 12.77, T_time: 125.66, best:0, kld:0.112
+our_model_2, epoch: 640, tr_loss: 6113.4, ts_loss: 6003.9, sm_loss: 7657.5, tr_time: 106.25, ts_time: 6.51, sm_time: 12.75, T_time: 125.50, best:0, kld:0.041
+our_model_2, epoch: 650, tr_loss: 6109.6, ts_loss: 6301.9, sm_loss: 8455.5, tr_time: 107.92, ts_time: 6.46, sm_time: 13.31, T_time: 127.69, best:0, kld:0.229
+our_model_2, epoch: 660, tr_loss: 6108.2, ts_loss: 6063.3, sm_loss: 7833.3, tr_time: 107.71, ts_time: 6.54, sm_time: 13.23, T_time: 127.48, best:0, kld:0.073
+our_model_2, epoch: 670, tr_loss: 6107.2, ts_loss: 6074.0, sm_loss: 7814.9, tr_time: 106.07, ts_time: 6.46, sm_time: 12.86, T_time: 125.40, best:0, kld:0.079
+our_model_2, epoch: 680, tr_loss: 6106.6, ts_loss: 6031.8, sm_loss: 7665.2, tr_time: 107.66, ts_time: 6.45, sm_time: 13.23, T_time: 127.33, best:0, kld:0.039
+our_model_2, epoch: 690, tr_loss: 6104.1, ts_loss: 6018.2, sm_loss: 7871.1, tr_time: 106.51, ts_time: 6.58, sm_time: 13.56, T_time: 126.64, best:0, kld:0.080
+our_model_2, epoch: 700, tr_loss: 6104.2, ts_loss: 6117.7, sm_loss: 7865.1, tr_time: 106.25, ts_time: 6.36, sm_time: 12.78, T_time: 125.39, best:0, kld:0.085
+our_model_2, epoch: 710, tr_loss: 6104.2, ts_loss: 6232.0, sm_loss: 8255.3, tr_time: 106.29, ts_time: 6.56, sm_time: 13.16, T_time: 126.00, best:0, kld:0.187
+our_model_2, epoch: 720, tr_loss: 6102.1, ts_loss: 6064.6, sm_loss: 7713.9, tr_time: 108.31, ts_time: 6.69, sm_time: 12.78, T_time: 127.78, best:0, kld:0.041
+our_model_2, epoch: 730, tr_loss: 6101.3, ts_loss: 6163.0, sm_loss: 7845.1, tr_time: 108.84, ts_time: 6.37, sm_time: 13.43, T_time: 128.63, best:0, kld:0.060
+our_model_2, epoch: 740, tr_loss: 6100.1, ts_loss: 6138.9, sm_loss: 7966.6, tr_time: 107.11, ts_time: 6.70, sm_time: 12.93, T_time: 126.74, best:0, kld:0.093
+our_model_2, epoch: 750, tr_loss: 6101.5, ts_loss: 6007.9, sm_loss: 7685.0, tr_time: 106.06, ts_time: 6.86, sm_time: 12.74, T_time: 125.66, best:0, kld:0.044
+our_model_2, epoch: 760, tr_loss: 6099.2, ts_loss: 6107.4, sm_loss: 7874.1, tr_time: 106.92, ts_time: 6.62, sm_time: 13.02, T_time: 126.57, best:0, kld:0.084

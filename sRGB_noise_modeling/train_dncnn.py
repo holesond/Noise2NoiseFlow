@@ -31,7 +31,6 @@ import random
 import urllib.request
 from scipy.io import loadmat, savemat
 import numpy as np
-import h5py
 import cv2
 import time
 
